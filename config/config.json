@@ -1,0 +1,7 @@
+{
+  "app_port"  : 3000,
+  "mailgun"   : {
+    "api_key"   : "key-dd128d43fb24b361d4ae6d12a2a1ac6e",
+    "domain"    : "mail.atmaji.id"
+  }
+}
