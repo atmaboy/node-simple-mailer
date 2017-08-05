@@ -25,6 +25,7 @@ module.exports = function(args)
     });
 
     args.MODULES.EXPRESS_APP.post('/mailer/store', function (req, res) {
+        console.log(req.body);
         var incoming = {
             sender      : req.body.sender ? req.body.sender : null,
             recipient   : req.body.recipient ? req.body.recipient : null,
