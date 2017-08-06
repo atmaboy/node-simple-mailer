@@ -2,7 +2,10 @@ var express         = require('express');
 var bodyParser 		= require('body-parser');
 
 var args            = {};
-args.CONFIGOBJ  = require('./config/config.json')
+var date            = new Date();
+
+args.CONFIGOBJ      = require('./config/config.json')
+args.CONFIGOBJ.date = date.getDate() + "/" + date.getMonth() + "/" + date.getYear();
 
 args.MODULES    = {
     EXPRESS_APP      : express(),
@@ -36,11 +39,11 @@ args.LOGGER			= {
     }
 };
 var port        = args.CONFIGOBJ.app_port;
-var loadRouter  = require('./router')(args);
 args.MODULES.EXPRESS_APP.use(bodyParser.json());
 args.MODULES.EXPRESS_APP.use(bodyParser.urlencoded({
     extended: true
 }));
+var loadRouter  = require('./routes/indexer')(args);
 
 args.MODULES.FIGLET.text('MAIL SENDER', {
     font: 'Slant',
