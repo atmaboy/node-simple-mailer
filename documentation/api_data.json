@@ -1,0 +1,75 @@
+[
+  {
+    "type": "post",
+    "url": "/mailer/send",
+    "title": "Request To Send an Email",
+    "name": "SendMail",
+    "group": "Mailer",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "recipients",
+            "description": "<p>string for recipients to send and email to</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "subject",
+            "description": "<p>subject is mandatory to send an email body</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>contains of message body do you want to send</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "api_message",
+            "description": "<p>Message from API server</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Contains data return from API, it can be object or string</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n \"api_message\": \"request success\",\n \"data\": {\n     \"id\": \"<20170807021426.125674.A006ABF78F16CF1A@mail.atmaji.id>\",\n     \"message\": \"Queued. Thank you.\"\n }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 201 Error\n{\n \"api_message\": \"request failed\",\n \"data\": {\n \"message\": \"recipients, subject and message body are mandatory and cannot be empty\"\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/list.js",
+    "groupTitle": "Mailer"
+  }
+]

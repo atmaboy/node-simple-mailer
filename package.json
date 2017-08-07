@@ -1,6 +1,7 @@
 {
-  "name": "hooq-challenge",
-  "version": "0.0.0",
+  "name": "Simple Mailer",
+  "version": "0.1.4",
+  "description": "Microservice to send email",
   "dependencies": {
     "async": "^2.5.0",
     "body-parser": "~1.15.2",
@@ -15,5 +16,9 @@
     "mongoose": "^4.11.5",
     "path": "^0.12.7",
     "redis": "^2.7.1"
+  },
+  "apidoc": {
+    "title": "Simple Mailer API Documentation",
+    "url" : "https://api.atmaji.id:3000"
   }
 }
