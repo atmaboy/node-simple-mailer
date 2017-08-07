@@ -48,7 +48,7 @@ module.exports = function(args)
         },
 
         sendMandrill : function (req,res, next) {
-            var mandrill = new args.MODULES.MANDRILL.Mandrill('ZuAeJ0vFFLaJklA1kNX3pA');
+            var mandrill = new args.MODULES.MANDRILL.Mandrill(args.CONFIGOBJ.mandrill.api_key);
             var message = {
                 subject     : req.body.subject,
                 text        : req.body.message,
