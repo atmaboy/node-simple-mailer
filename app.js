@@ -5,7 +5,7 @@ var args            = {};
 var date            = new Date();
 
 args.CONFIGOBJ      = require('./config/config.json')
-args.CONFIGOBJ.date = date.getDate() + "/" + date.getMonth() + "/" + date.getYear();
+args.CONFIGOBJ.date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
 
 args.MODULES    = {
     EXPRESS_APP      : express(),
@@ -16,7 +16,8 @@ args.MODULES    = {
     CHALK 		     : require('chalk'),
     FIGLET           : require('figlet'),
     BOXEN		     : require('boxen'),
-    MAILGUN          : require('mailgun-js')
+    MAILGUN          : require('mailgun-js'),
+    MANDRILL         : require('mandrill-api/mandrill')
 }
 
 args.CONSOLE 		= {
