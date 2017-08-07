@@ -3,7 +3,7 @@
 ## Overview
   This is a simple microservice using node js and express framework to send an email to recipient
 
-##Quickstart    
+## Quickstart    
 - use `npm install` to install all dependencies module
 - use `node app.js` to run apps
 
