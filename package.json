@@ -1,7 +1,7 @@
 {
   "name": "Simple Mailer",
   "version": "0.1.4",
-  "description": "Microservice to send email",
+  "description": "Microservice to send email | https://github.com/atmaboy/node-simple-mailer",
   "dependencies": {
     "async": "^2.5.0",
     "body-parser": "~1.15.2",
